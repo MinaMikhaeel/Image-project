@@ -60,8 +60,7 @@ def upload_file():
         if(image is None):
                 author_image_link = "https://www.pngjoy.com/pngm/183/3626713_vin-diesel-unknown-face-png-png-download.png"  
         break
-        
-# Search for books with the same category using google api
+    # Search for books with the same category using google api
     categories_data = requests.get("https://www.googleapis.com/books/v1/volumes?q=subject:"+current_data['volumeInfo']['categories'][0]).json()
     if 'items' not in categories_data:
         categories_data = requests.get("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy").json()
@@ -98,3 +97,21 @@ def upload_file():
     while counter < 4 :
         other_books[counter].append(other_books[0])
         counter += 1
+    
+    # Search for other books written by the author using their name
+    other_books_from_the_author = requests.get("https://www.googleapis.com/books/v1/volumes?q=inauthor:"+author_name_formatted).json()
+    if 'items' not in other_books_from_the_author:
+        other_books_from_the_author = requests.get("https://www.googleapis.com/books/v1/volumes?q=inauthor:Stephen+King").json()
+    other_books_from_the_author=other_books_from_the_author['items']
+    other_books_list = []
+    for book in other_books_from_the_author:
+        if 'categories' not in book['volumeInfo']:
+            continue
+        other_books_list.append(book)
+    
+    other_books_from_the_author = other_books_list[0:4]
+    
+    # Returns all the data to the interface
+    return render_template('book_info.html', data = current_data, author_image_link=author_image_link, categories_data = other_books,other_books_from_the_author=other_books_from_the_author,suggested_authors_images=suggested_authors_images)
+if __name__ == "__main__":
+    app.run(debug=True)
