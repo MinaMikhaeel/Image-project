@@ -1,1 +1,1 @@
-# Image-project.
+# Image-project
