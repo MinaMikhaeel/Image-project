@@ -60,3 +60,41 @@ def upload_file():
         if(image is None):
                 author_image_link = "https://www.pngjoy.com/pngm/183/3626713_vin-diesel-unknown-face-png-png-download.png"  
         break
+        
+# Search for books with the same category using google api
+    categories_data = requests.get("https://www.googleapis.com/books/v1/volumes?q=subject:"+current_data['volumeInfo']['categories'][0]).json()
+    if 'items' not in categories_data:
+        categories_data = requests.get("https://www.googleapis.com/books/v1/volumes?q=subject:fantasy").json()
+    categories_data=categories_data['items']
+    suggested_authors_images = []
+    counter = 0
+    other_books = []
+    for suggested_book in categories_data:
+        if 'authors' not in suggested_book['volumeInfo']:
+            continue
+        # Obtain the authors name and search for their photo using open library api
+        suggested_author = (suggested_book['volumeInfo']['authors'][0]).replace((" "),"+")
+        author_key = requests.get("http://openlibrary.org/search.json?author="+suggested_author).json()['docs']
+        if len(author_key) == 0:
+            continue
+        author_key = author_key[0]['author_key'][0]
+        suggested_author_image = "http://covers.openlibrary.org/a/olid/"+ author_key +"-L.jpg"
+        # Convert the image from a link to data
+        res = requests.get(suggested_author_image,headers=headers)
+        image_bytes = io.BytesIO(res.content)
+        image = np.fromstring(image_bytes.getvalue(), dtype=np.uint8)
+        color_image_flag = 1
+        image = cv2.imdecode(image, color_image_flag)
+        counter += 1
+        # Returns a default image if there's no image for the author
+        if(image is None):
+            suggested_author_image = "https://www.pngjoy.com/pngm/183/3626713_vin-diesel-unknown-face-png-png-download.png"      
+        suggested_authors_images.append(suggested_author_image)
+        other_books.append(suggested_book)
+        if counter == 4:
+            break
+    
+    # If the number of book is less than 4 return duplicated data
+    while counter < 4 :
+        other_books[counter].append(other_books[0])
+        counter += 1
