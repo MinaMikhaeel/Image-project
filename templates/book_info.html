@@ -33,14 +33,16 @@
       </div>
     </header>
     <main>
-      <!--el book details-->
+      
       <a href="#head" class="up">
         <i class="fas fa-arrow-up"></i>
       </a>
 
 
       <div class="overlay"></div>
+      <!--Required book details-->
       <section id="first" class="about mainDetails " style="padding-top: 80px; color: #3b444d;">
+        <!-- Title of the book -->
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
         font-family: 'Mate SC', serif;
         box-shadow: 0px 5px 24px;
@@ -58,7 +60,7 @@
                   border-radius: 38%;
                   height: 150px;">
               </div>
-              <h3>author</h3>
+              <h3>Author</h3>
               {% if data.volumeInfo.authors[0] %}
               <h4>{{data.volumeInfo.authors[0]}}</h4>
               {%else%}
@@ -74,7 +76,7 @@
                       height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if data.volumeInfo.publisher %}
               <h4> {{data.volumeInfo.publisher}}</h4>
@@ -92,7 +94,7 @@
                       height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if data.volumeInfo.publishedDate %}
               <h4> {{data.volumeInfo.publishedDate}}</h4>
@@ -108,7 +110,7 @@
                                   width: 50%;
                                   height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if data.volumeInfo.pageCount %}
               <h4> {{data.volumeInfo.pageCount}}</h4>
               {%else%}
@@ -151,7 +153,7 @@
             <div class="modal-dialog modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">book description</h5>
+                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">Book Description</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -174,10 +176,11 @@ border-radius:10%;        ">Close</button>
 
         </div>
       </section>
-      <!-- book sugges. -->
+
+      <!-- Books suggested. -->
       <div style="background-color: #3b444d;     padding: 30px 0;">
         <h1 class="text-uppercase font-weight-bolder" style="text-align: center; margin:0 0 20px 0; color: #fff;">More
-          From <span>author</span></h1>
+          From <span>Author</span></h1>
         <div id="sug" class="row mx-0" style="justify-content: space-evenly; ">
           <div class="column">
             <img src={{other_books_from_the_author[0].volumeInfo.imageLinks.thumbnail}} onclick="myFunction(1);">
@@ -196,14 +199,9 @@ border-radius:10%;        ">Close</button>
 
 
 
-      <!-- The expanding image container -->
-      <!-- Close the image -->
-
-
-      <!-- Expanded image -->
-
-      <!-- ely bytl3 lma ados 3ala sora -->
-
+      <!-- Suggested books details -->
+  
+      <!-- First suggested book details-->
       <section id="imgtext" class="about" style="padding-top: 80px; display: none; color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
     font-family: 'Mate SC', serif;
@@ -225,7 +223,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if other_books_from_the_author[0].volumeInfo.publisher %}
               <h4> {{other_books_from_the_author[0].volumeInfo.publisher}}</h4>
@@ -243,7 +241,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if other_books_from_the_author[0].volumeInfo.publishedDate %}
               <h4> {{other_books_from_the_author[0].volumeInfo.publishedDate}}</h4>
@@ -259,7 +257,7 @@ border-radius:10%;        ">Close</button>
                               width: 40%;
                               height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if other_books_from_the_author[0].volumeInfo.pageCount %}
               <h4>{{other_books_from_the_author[0].volumeInfo.pageCount}}</h4>
               {%else%}
@@ -286,7 +284,7 @@ border-radius:10%;        ">Close</button>
             <!-- Scrollable modal -->
             <!-- Button trigger modal -->
             <button type="button" class="btn text-uppercase" data-toggle="modal" data-target="#exampleModal1">
-              show description
+              Show Description
             </button>
           </div>
 
@@ -322,7 +320,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Second suggested book details-->
       <section id="imgtext2" class="about" style="padding-top: 80px; display: none; color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
     font-family: 'Mate SC', serif;
@@ -343,7 +341,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if other_books_from_the_author[1].volumeInfo.publisher %}
               <h4> {{other_books_from_the_author[1].volumeInfo.publisher}}</h4>
@@ -361,7 +359,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if other_books_from_the_author[1].volumeInfo.publishedDate %}
               <h4>{{other_books_from_the_author[1].volumeInfo.publishedDate}}</h4>
@@ -377,7 +375,7 @@ border-radius:10%;        ">Close</button>
                               width: 40%;
                               height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if other_books_from_the_author[1].volumeInfo.pageCount %}
               <h4>{{other_books_from_the_author[1].volumeInfo.pageCount}}</h4>
               {%else%}
@@ -404,7 +402,7 @@ border-radius:10%;        ">Close</button>
             <!-- Scrollable modal -->
             <!-- Button trigger modal -->
             <button type="button" class="btn text-uppercase" data-toggle="modal" data-target="#exampleModal2">
-              show description
+              Show Description
             </button>
           </div>
 
@@ -418,7 +416,7 @@ border-radius:10%;        ">Close</button>
             <div class="modal-dialog modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">book description</h5>
+                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">Book Description</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -439,7 +437,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Third suggested book details-->
       <section id="imgtext3" class="about" style="padding-top: 80px; display: none;  color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
     font-family: 'Mate SC', serif;
@@ -460,7 +458,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if other_books_from_the_author[2].volumeInfo.publisher %}
               <h4>{{other_books_from_the_author[2].volumeInfo.publisher}}</h4>
@@ -478,7 +476,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if other_books_from_the_author[2].volumeInfo.publishedDate %}
               <h4>{{other_books_from_the_author[2].volumeInfo.publishedDate}}</h4>
@@ -495,7 +493,7 @@ border-radius:10%;        ">Close</button>
                               width: 40%;
                               height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if other_books_from_the_author[2].volumeInfo.pageCount %}
               <h4>{{other_books_from_the_author[2].volumeInfo.pageCount}}</h4>
               {%else%}
@@ -522,7 +520,7 @@ border-radius:10%;        ">Close</button>
             <!-- Scrollable modal -->
             <!-- Button trigger modal -->
             <button type="button" class="btn text-uppercase" data-toggle="modal" data-target="#exampleModal3">
-              show description
+              Show Description
             </button>
           </div>
 
@@ -536,7 +534,7 @@ border-radius:10%;        ">Close</button>
             <div class="modal-dialog modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">book description</h5>
+                  <h5 class="modal-title text-uppercase" id="exampleModalLabel">Book Description</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -559,7 +557,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Fourth suggested book details-->
       <section id="imgtext4" class="about" style="padding-top: 80px; display: none;  color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
     font-family: 'Mate SC', serif;
@@ -580,7 +578,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if other_books_from_the_author[3].volumeInfo.publisher %}
               <h4> {{other_books_from_the_author[3].volumeInfo.publisher}}</h4>
@@ -598,7 +596,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if other_books_from_the_author[3].volumeInfo.publishedDate %}
               <h4> {{other_books_from_the_author[3].volumeInfo.publishedDate}}</h4>
@@ -615,7 +613,7 @@ border-radius:10%;        ">Close</button>
                               width: 40%;
                               height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if other_books_from_the_author[3].volumeInfo.pageCount %}
               <h4> {{other_books_from_the_author[3].volumeInfo.pageCount}}</h4>
               {%else%}
@@ -644,7 +642,7 @@ border-radius:10%;        ">Close</button>
             <!-- Scrollable modal -->
             <!-- Button trigger modal -->
             <button type="button" class="btn text-uppercase" data-toggle="modal" data-target="#exampleModal4">
-              show description
+              Show Description
             </button>
           </div>
 
@@ -680,7 +678,9 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-      <!--same categories-->
+
+      <!--Same book categories details-->
+
       <section id="third" class="team" style="background-color: #3b444d;
     color: #fff;">
         <div class="container text-center">
@@ -883,7 +883,7 @@ border-radius:10%;        ">Close</button>
         </div>
 
       </section>
-
+      <!-- First same category book details-->
       <section id="fourth" class="about text" style="padding-top: 80px; display: none; background-color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
       font-family: 'Mate SC', serif;
@@ -903,7 +903,7 @@ border-radius:10%;        ">Close</button>
                 border-radius: 38%;
                 height: 150px;">
               </div>
-              <h3>author</h3>
+              <h3>Author</h3>
               {% if categories_data[0].volumeInfo.authors[0] %}
 
               <h4>{{categories_data[0].volumeInfo.authors[0]}}</h4>
@@ -920,7 +920,7 @@ border-radius:10%;        ">Close</button>
                     height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if categories_data[0].volumeInfo.publisher %}
 
@@ -940,7 +940,7 @@ border-radius:10%;        ">Close</button>
                     height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if categories_data[0].volumeInfo.publishedDate %}
 
@@ -958,7 +958,7 @@ border-radius:10%;        ">Close</button>
                                 width: 40%;
                                 height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if categories_data[0].volumeInfo.pageCount %}
 
               <h4>{{categories_data[0].volumeInfo.pageCount}}</h4>
@@ -1009,7 +1009,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Second same category book details-->
       <section id="fifth" class="about text" style="padding-top: 80px; display: none; background-color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
     font-family: 'Mate SC', serif;
@@ -1029,7 +1029,7 @@ border-radius:10%;        ">Close</button>
               border-radius: 38%;
               height: 150px;">
               </div>
-              <h3>author</h3>
+              <h3>Author</h3>
               {% if categories_data[1].volumeInfo.authors[0] %}
               <h4>{{categories_data[1].volumeInfo.authors[0]}}</h4>
               {%else%}
@@ -1046,7 +1046,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if categories_data[1].volumeInfo.publisher %}
               <h4>{{categories_data[1].volumeInfo.publisher}}</h4>
@@ -1064,7 +1064,7 @@ border-radius:10%;        ">Close</button>
                   height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if categories_data[1].volumeInfo.publishedDate %}
               <h4>{{categories_data[1].volumeInfo.publishedDate}}</h4>
@@ -1081,7 +1081,7 @@ border-radius:10%;        ">Close</button>
                               width: 40%;
                               height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if categories_data[1].volumeInfo.pageCount %}
 
               <h4>{{categories_data[1].volumeInfo.pageCount}}</h4>
@@ -1132,7 +1132,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Third same category book details-->
       <section id="sixth" class="about text" style="padding-top: 80px; display: none; background-color: #3b444d;">
         <h1 class="font-weight-bolder text-uppercase title mb-5" style="    
   font-family: 'Mate SC', serif;
@@ -1152,7 +1152,7 @@ border-radius:10%;        ">Close</button>
             border-radius: 38%;
             height: 150px;">
               </div>
-              <h3>author</h3>
+              <h3>Author</h3>
               {% if categories_data[2].volumeInfo.authors[0] %}
 
               <h4>{{categories_data[2].volumeInfo.authors[0]}}</h4>
@@ -1169,7 +1169,7 @@ border-radius:10%;        ">Close</button>
                 height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if categories_data[2].volumeInfo.publisher %}
 
@@ -1188,7 +1188,7 @@ border-radius:10%;        ">Close</button>
                 height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if categories_data[2].volumeInfo.publishedDate %}
 
@@ -1206,7 +1206,7 @@ border-radius:10%;        ">Close</button>
                             width: 40%;
                             height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if categories_data[2].volumeInfo.pageCount %}
 
               <h4> {{categories_data[2].volumeInfo.pageCount}}</h4>
@@ -1244,7 +1244,7 @@ border-radius:10%;        ">Close</button>
 
                   {{categories_data[2].volumeInfo.description}}
                   {%else%}
-                  NOT FOUND
+                  NOT FOUNDd
                   {%endif%}
                 </div>
                 <div class="modal-footer">
@@ -1256,7 +1256,7 @@ border-radius:10%;        ">Close</button>
           </div>
         </div>
       </section>
-
+      <!-- Fourth same category book details-->
       <section id="seventh" class="about text" style="padding-top: 80px; display: none; background-color: #3b444d;">
 
 
@@ -1278,7 +1278,7 @@ border-radius:10%;        ">Close</button>
             border-radius: 38%;
             height: 150px;">
               </div>
-              <h3>author</h3>
+              <h3>Author</h3>
               {% if categories_data[3].volumeInfo.authors[0] %}
 
               <h4>{{categories_data[3].volumeInfo.authors[0]}}</h4>
@@ -1295,7 +1295,7 @@ border-radius:10%;        ">Close</button>
                 height: 150px;"></i>
               </div>
               <h3>
-                publisher
+                Publisher
               </h3>
               {% if categories_data[3].volumeInfo.publisher %}
 
@@ -1315,7 +1315,7 @@ border-radius:10%;        ">Close</button>
                 height: 150px;"></i>
               </div>
               <h3>
-                published date
+                Published Date
               </h3>
               {% if categories_data[3].volumeInfo.publishedDate %}
 
@@ -1332,7 +1332,7 @@ border-radius:10%;        ">Close</button>
                             width: 40%;
                             height: 150px;"></i>
               </div>
-              <h3>page count</h3>
+              <h3>Page Count</h3>
               {% if categories_data[3].volumeInfo.pageCount %}
 
               <h4>{{categories_data[3].volumeInfo.pageCount}}</h4>
